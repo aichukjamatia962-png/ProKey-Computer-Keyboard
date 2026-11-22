@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="@string/cat_layout">
+        <ListPreference
+            app:defaultValue="mobile"
+            app:entries="@array/layout_entries"
+            app:entryValues="@array/layout_values"
+            app:iconSpaceReserved="false"
+            app:key="layout_mode"
+            app:title="@string/pref_layout_mode"
+            app:useSimpleSummaryProvider="true" />
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:iconSpaceReserved="false"
+            app:key="number_row"
+            app:summary="@string/pref_number_row_sub"
+            app:title="@string/pref_number_row" />
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:iconSpaceReserved="false"
+            app:key="function_row"
+            app:summary="@string/pref_function_row_sub"
+            app:title="@string/pref_function_row" />
+        <SwitchPreferenceCompat
+            app:defaultValue="false"
+            app:iconSpaceReserved="false"
+            app:key="numeric_keypad"
+            app:summary="@string/pref_numpad_sub"
+            app:title="@string/pref_numpad" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="@string/cat_typing">
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:iconSpaceReserved="false"
+            app:key="auto_cap"
+            app:summary="@string/pref_auto_cap_sub"
+            app:title="@string/pref_auto_cap" />
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:iconSpaceReserved="false"
+            app:key="double_space"
+            app:summary="@string/pref_double_space_sub"
+            app:title="@string/pref_double_space" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="@string/cat_appearance">
+        <ListPreference
+            app:defaultValue="classic_black"
+            app:iconSpaceReserved="false"
+            app:key="theme"
+            app:title="@string/pref_theme"
+            app:useSimpleSummaryProvider="true" />
+        <SeekBarPreference
+            android:max="130"
+            app:defaultValue="100"
+            app:iconSpaceReserved="false"
+            app:key="key_height"
+            app:min="70"
+            app:showSeekBarValue="true"
+            app:title="@string/pref_height" />
+        <SeekBarPreference
+            android:max="8"
+            app:defaultValue="3"
+            app:iconSpaceReserved="false"
+            app:key="key_gap"
+            app:min="0"
+            app:showSeekBarValue="true"
+            app:title="@string/pref_gap" />
+        <SeekBarPreference
+            android:max="20"
+            app:defaultValue="8"
+            app:iconSpaceReserved="false"
+            app:key="key_radius"
+            app:min="0"
+            app:showSeekBarValue="true"
+            app:title="@string/pref_radius" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="@string/cat_sound">
+        <SwitchPreferenceCompat
+            app:defaultValue="false"
+            app:iconSpaceReserved="false"
+            app:key="sound_on"
+            app:summary="@string/pref_sound_sub"
+            app:title="@string/pref_sound" />
+        <SeekBarPreference
+            android:max="100"
+            app:defaultValue="50"
+            app:iconSpaceReserved="false"
+            app:key="sound_volume"
+            app:min="1"
+            app:showSeekBarValue="true"
+            app:title="@string/pref_sound_volume" />
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:iconSpaceReserved="false"
+            app:key="vibrate_on"
+            app:title="@string/pref_vibrate" />
+        <SeekBarPreference
+            android:max="100"
+            app:defaultValue="50"
+            app:iconSpaceReserved="false"
+            app:key="vibrate_level"
+            app:min="1"
+            app:showSeekBarValue="true"
+            app:title="@string/pref_vib_level" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="@string/cat_privacy">
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="privacy_info"
+            app:title="@string/pref_privacy_info" />
+    </PreferenceCategory>
+</PreferenceScreen>

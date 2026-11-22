@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ProKey – Computer Keyboard</string>
+    <string name="subtype_en">English (US)</string>
+    <string name="settings_title">ProKey settings</string>
+    <string name="try_hint">Tap here to try ProKey</string>
+
+    <string name="status_not_enabled">Step 1: turn on ProKey in the Android keyboard list.</string>
+    <string name="status_not_selected">Step 2: switch your active keyboard to ProKey.</string>
+    <string name="status_ready">ProKey is enabled and selected.</string>
+
+    <string name="step_enable">1. Enable ProKey</string>
+    <string name="step_enable_sub">Opens the Android keyboard list. Turn on ProKey.</string>
+    <string name="step_select">2. Select ProKey</string>
+    <string name="step_select_sub">Choose ProKey as your active keyboard.</string>
+    <string name="step_settings">Keyboard settings</string>
+    <string name="step_settings_sub">Themes, PC mode, layout, sound and vibration.</string>
+    <string name="step_privacy">Privacy &amp; Security</string>
+    <string name="step_privacy_sub">What ProKey does and does not do with your typing.</string>
+    <string name="step_about">About ProKey</string>
+    <string name="step_about_sub">Version and build information.</string>
+
+    <string name="privacy_title">Privacy &amp; Security</string>
+    <string name="privacy_body">ProKey is built to keep your typing private.\n\n• What you type is never stored, logged or sent anywhere.\n• This version has no INTERNET permission, no ads and no analytics.\n• The only data kept on your device is your keyboard settings.\n• The VIBRATE permission is used only for key vibration.\n• Word suggestions, clipboard history and a personal dictionary are not part of this version.</string>
+    <string name="about_title">About ProKey</string>
+    <string name="about_body">ProKey – Computer Keyboard\nVersion %1$s\nPackage: %2$s\n\nCore build: mobile QWERTY, PC computer-keyboard mode, 15 themes, key sound and vibration.</string>
+
+    <string name="cat_layout">Layout</string>
+    <string name="pref_layout_mode">Keyboard mode</string>
+    <string name="pref_number_row">Number row</string>
+    <string name="pref_number_row_sub">Mobile mode: show 0–9 above the letters.</string>
+    <string name="pref_function_row">Function row</string>
+    <string name="pref_function_row_sub">PC mode: show F1–F12. The Fn key toggles it.</string>
+    <string name="pref_numpad">Numeric keypad</string>
+    <string name="pref_numpad_sub">PC mode, landscape only.</string>
+
+    <string name="cat_typing">Typing</string>
+    <string name="pref_auto_cap">Auto-capitalization</string>
+    <string name="pref_auto_cap_sub">Mobile mode: capitalize as the text field requests.</string>
+    <string name="pref_double_space">Double-space period</string>
+    <string name="pref_double_space_sub">Mobile mode: two quick spaces insert a period and a space.</string>
+
+    <string name="cat_appearance">Appearance</string>
+    <string name="pref_theme">Theme</string>
+    <string name="pref_height">Keyboard height (%)</string>
+    <string name="pref_gap">Key spacing (dp)</string>
+    <string name="pref_radius">Corner radius (dp)</string>
+
+    <string name="cat_sound">Sound &amp; vibration</string>
+    <string name="pref_sound">Key sound</string>
+    <string name="pref_sound_sub">Uses Android touch sounds. Turn on Touch sounds in system settings if you hear nothing.</string>
+    <string name="pref_sound_volume">Sound volume</string>
+    <string name="pref_vibrate">Key vibration</string>
+    <string name="pref_vib_level">Vibration intensity</string>
+
+    <string name="cat_privacy">Privacy</string>
+    <string name="pref_privacy_info">Privacy information</string>
+</resources>
