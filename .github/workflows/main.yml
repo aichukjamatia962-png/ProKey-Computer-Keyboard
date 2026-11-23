@@ -1,5 +1,4 @@
-
-name: ProKey Debug APK
+name: ProKey v0.2.0 Debug APK
 
 on:
   workflow_dispatch:
@@ -21,14 +20,32 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Set up Gradle
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Set up Gradle 8.9
         uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 8.9
+
+      - name: Extract and update v0.2.0 project
+        run: |
+          mkdir -p "$RUNNER_TEMP/prokey-v020"
+          unzip -q ProKey-android-v0.2.0.zip -d "$RUNNER_TEMP/prokey-v020"
+          rm -rf app
+          cp -a "$RUNNER_TEMP/prokey-v020/ProKey/app" ./app
+          cp "$RUNNER_TEMP/prokey-v020/ProKey/build.gradle.kts" .
+          cp "$RUNNER_TEMP/prokey-v020/ProKey/settings.gradle.kts" .
+          cp "$RUNNER_TEMP/prokey-v020/ProKey/gradle.properties" .
+          cp -a "$RUNNER_TEMP/prokey-v020/ProKey/gradle" ./gradle
+          cp "$RUNNER_TEMP/prokey-v020/ProKey/proguard-rules.pro" .
 
       - name: Build debug APK
-        run: gradle assembleDebug
+        run: gradle assembleDebug --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: ProKey-Debug-APK
-          path: app/build/outputs/apk/debug/*.apk
+          name: ProKey-v0.2.0-Debug-APK
+          path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
