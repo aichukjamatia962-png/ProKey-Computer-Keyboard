@@ -38,7 +38,7 @@ jobs:
           cp "$RUNNER_TEMP/prokey-v020/ProKey/settings.gradle.kts" .
           cp "$RUNNER_TEMP/prokey-v020/ProKey/gradle.properties" .
           cp -a "$RUNNER_TEMP/prokey-v020/ProKey/gradle" ./gradle
-          sed -i -E 's/^([[:space:]]*)fun cancelLongPress\(/\1override fun cancelLongPress(/' app/src/main/java/com/prokey/computerkeyboard/KeyboardView.kt
+          sed -i -E 's/^([[:space:]]*)private fun cancelLongPress\(/\1override fun cancelLongPress(/' app/src/main/java/com/prokey/computerkeyboard/KeyboardView.kt
 
       - name: Build debug APK
         run: gradle assembleDebug --stacktrace
