@@ -1,0 +1,54 @@
+name: ProKey v0.4.1 Debug APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'ProKey-android-v0.4.1.zip'
+      - '.github/workflows/build-v041.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v4
+
+      - name: Set up Gradle 8.9
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 8.9
+
+      - name: Extract v0.4.1 project
+        run: |
+          mkdir -p "$RUNNER_TEMP/prokey-v041"
+          unzip -q ProKey-android-v0.4.1.zip -d "$RUNNER_TEMP/prokey-v041"
+          rm -rf app gradle
+          cp -a "$RUNNER_TEMP/prokey-v041/ProKey/app" ./app
+          cp "$RUNNER_TEMP/prokey-v041/ProKey/build.gradle.kts" .
+          cp "$RUNNER_TEMP/prokey-v041/ProKey/settings.gradle.kts" .
+          cp "$RUNNER_TEMP/prokey-v041/ProKey/gradle.properties" .
+          cp -a "$RUNNER_TEMP/prokey-v041/ProKey/gradle" ./gradle
+          sed -i -E 's/^([[:space:]]*)private fun cancelLongPress\(/\1override fun cancelLongPress(/' app/src/main/java/com/prokey/computerkeyboard/KeyboardView.kt
+
+      - name: Build debug APK
+        run: gradle assembleDebug --stacktrace
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: ProKey-v0.4.1-Debug-APK
+          path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
